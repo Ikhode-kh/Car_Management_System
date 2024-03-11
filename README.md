@@ -4,6 +4,7 @@
 - Kong Ming : Read
 - Senghak Chan: Update
 - សាយ សក្ដិសុវឌ្ឍនៈ Delete
+- SORY TET : Search
 - Chunn Sann: Display
 
 
