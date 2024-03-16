@@ -5,20 +5,17 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import org.json.JSONArray;  
-import org.json.JSONObject;  
 
 public class Car_read {
   public static void main(String[] args) {
     try {
       JSONArray jsonArray = readJsonArrayFromFile("Car_DataSet.json");
-
       System.out.printf("%-5s %-10s %-10s %-10s %-10s %-20s %-10s\n", "ID", "Make", "Model", "Year", "Mileage",
           "maintenace_stat", "Price");
-
-      for (int i = 0; i <= jsonArray.size(); i++) {
-        System.out.println(jsonArray.get(i));
-      }
+      // for (Object object : jsonArray) {
+      //   System.out.println(object.ge);
+      // }
+        System.out.println(jsonArray.get(2));
     } catch (IOException | ParseException e) {
       e.printStackTrace();
     }
