@@ -12,10 +12,11 @@ public class Car_read {
       JSONArray jsonArray = readJsonArrayFromFile("Car_DataSet.json");
       System.out.printf("%-5s %-10s %-10s %-10s %-10s %-20s %-10s\n", "ID", "Make", "Model", "Year", "Mileage",
           "maintenace_stat", "Price");
-      // for (Object object : jsonArray) {
-      //   System.out.println(object.ge);
-      // }
-        System.out.println(jsonArray.get(2));
+          for (Object obj : jsonArray) {
+            JSONObject car = (JSONObject) obj;
+            System.out.printf("%-5s %-10s %-10s %-10s %-10s %-20s %-10s\n", car.get("id"), car.get("make"), car.get("model"),car.get("year"),car.get("mileage"),car.get( "maintenace_stat"),car.get("price"));
+        }
+
     } catch (IOException | ParseException e) {
       e.printStackTrace();
     }
