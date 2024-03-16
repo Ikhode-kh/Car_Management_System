@@ -1,5 +1,6 @@
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -9,7 +10,12 @@ public class Car_read {
   public static void main(String[] args) {
     try {
       JSONArray jsonArray = readJsonArrayFromFile("Car_DataSet.json");
-      System.out.println("JSON Array: " + jsonArray);
+      JSONObject obj=new JSONObject();
+      ArrayList<ArrayList<String>> arraylist=new ArrayList<ArrayList<String>>();
+      for (int i =0;i<jsonArray.size();i++){
+        arraylist.add()
+        
+      }
     } catch (IOException | ParseException e) {
       e.printStackTrace();
     }

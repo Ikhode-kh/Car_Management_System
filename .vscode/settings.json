@@ -7,11 +7,18 @@
     "c:\\Users\\MSI\\OneDrive - Royal University of Phnom Penh\\Desktop\\jackson-mapper-asl-1.9.13.jar\\jar_files\\jackson-annotations-2.17.0-rc1.jar",
     "c:\\Users\\MSI\\OneDrive - Royal University of Phnom Penh\\Desktop\\jackson-mapper-asl-1.9.13.jar\\jar_files\\jackson-core-2.17.0-rc1.jar",
     "c:\\Users\\MSI\\OneDrive - Royal University of Phnom Penh\\Desktop\\jackson-mapper-asl-1.9.13.jar\\jar_files\\jackson-databind-2.17.0-rc1.jar",
+<<<<<<< Updated upstream
     "Libraries/kongming/byte-buddy-1.14.9.jar",
     "Libraries/kongming/jackson-annotations-2.17.0-rc1.jar",
     "Libraries/kongming/jackson-core-2.17.0-rc1.jar",
     "Libraries/kongming/jackson-databind-2.17.0-rc1.jar",
     "Libraries/kongming/jackson-mapper-asl-1.9.13.jar",
     "Libraries/kongming/json-simple-1.1.1.jar"
+=======
+    "Libraries/Maven/jackson-annotations-2.17.0-rc1.jar",
+    "Libraries/Maven/jackson-core-2.17.0-rc1.jar",
+    "Libraries/Maven/jackson-databind-2.17.0-rc1.jar",
+    "Libraries/json-simple-1.1.1.jar"
+>>>>>>> Stashed changes
   ]
 }
