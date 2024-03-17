@@ -1,13 +1,10 @@
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class AddCar {
     private  int id;
@@ -52,22 +49,39 @@ public class AddCar {
         CarList.add(car9);
         CarList.add(car10);
 
-        //Map the Arraylist
-        Map<String , ArrayList<AddCar>> cars = new HashMap<>();
-        cars.put("Cars", CarList);
-        //output JSON that is nicely formatted
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-        //converts a map of Car obj into its JSON
-        String json = gson.toJson(cars);
+        JSONObject mainObj = new JSONObject();
+        JSONArray jArr = new JSONArray();
+        mainObj.put("Cars", jArr);
+
+
+        for (AddCar car :CarList) {
+            JSONObject jsonObj = new JSONObject();
+            jsonObj.put("Price",car.price);
+            jsonObj.put("Maintenace_stat",car.maintenace_stat);
+            jsonObj.put("Mileage",car.mileage);
+            jsonObj.put("Year",car.year);
+            jsonObj.put("Model",car.model);
+            jsonObj.put("Make",car.make);
+            jsonObj.put("Id",car.id);
+            jArr.add(jsonObj);
+        }
+//        //Map the Arraylist
+//        Map<String , ArrayList<AddCar>> cars = new HashMap<>();
+//        cars.put("Cars", CarList);
+//        //output JSON that is nicely formatted
+//        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+//
+//        //converts a map of Car obj into its JSON
+//        String json = gson.toJson(cars);
 
         //Declare file path
         String fileStore = "Car_DataSet.json";
 
         //Write data to the existing JSON file
         try(Writer writeData = new FileWriter(fileStore)){
-            //data in json will write to filestore
-            writeData.write(json);
+            //write json object to json string to file
+            writeData.write(mainObj.toJSONString());
             System.out.println("Succesfull write to Json"+ fileStore);
             writeData.close();
         }
