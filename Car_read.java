@@ -9,8 +9,10 @@ public class Car_read {
   public static void main(String[] args) {
     try {
       JSONArray jsonArray = readJsonArrayFromFile("Car_DataSet.json");
-      JSONObject obj=new JSONObject();
-      System.out.println("JSON Array: " + obj.get(""));
+      for (Object object : jsonArray) {
+        JSONObject obj=new JSONObject();
+        System.out.println(obj.get("id"));
+      }
     } catch (IOException | ParseException e) {
       e.printStackTrace();
     }
