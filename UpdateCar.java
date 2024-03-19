@@ -4,13 +4,14 @@ import org.json.simple.parser.ParseException;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class Car {
+public class UpdateCar {
     private String code;
     private String name;
 
-    public Car(String code, String name) {
+    public UpdateCar(String code, String name) {
         this.code = code;
         this.name = name;
+        
     }
 
     public String getCode() {
