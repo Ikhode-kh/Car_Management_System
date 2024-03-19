@@ -49,13 +49,15 @@ public class AddCar {
         CarList.add(car9);
         CarList.add(car10);
 
-
+        //create object to put label (keys , value)
         JSONObject mainObj = new JSONObject();
+        //json object will store value of json array
         JSONArray jArr = new JSONArray();
         mainObj.put("Cars", jArr);
 
 
         for (AddCar car :CarList) {
+            // loop for store attribute to each car
             JSONObject jsonObj = new JSONObject();
             jsonObj.put("Price",car.price);
             jsonObj.put("Maintenace_stat",car.maintenace_stat);
@@ -65,6 +67,7 @@ public class AddCar {
             jsonObj.put("Make",car.make);
             jsonObj.put("Id",car.id);
             jArr.add(jsonObj);
+            //json array will store this array object
         }
 //        //Map the Arraylist
 //        Map<String , ArrayList<AddCar>> cars = new HashMap<>();
