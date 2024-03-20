@@ -1,26 +1,18 @@
-
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.io.FileReader;
-import java.io.IOException;
-
 public class Car_read {
   public static void main(String[] args) {
     try {
       JSONArray jsonArray = readJsonArrayFromFile("Car_DataSet.json");
-      System.out.printf("%-5s %-10s %-10s %-10s %-10s %-20s %-10s\n", "ID", "Make", "Model", "Year", "Mileage",
-          "maintenace_stat", "Price");
-          for (Object obj : jsonArray) {
-            JSONObject car = (JSONObject) obj;
-            System.out.printf("%-5s %-10s %-10s %-10s %-10s %-20s %-10s\n", car.get("id"), car.get("make"), car.get("model"),car.get("year"),car.get("mileage"),car.get( "maintenace_stat"),car.get("price"));
-        }
-
+      for (Object object : jsonArray) {
+        JSONObject obj=new JSONObject();
+        System.out.println(obj.get("id"));
+      }
     } catch (IOException | ParseException e) {
       e.printStackTrace();
     }
@@ -39,4 +31,3 @@ public class Car_read {
     return jsonArray;
   }
 }
-
