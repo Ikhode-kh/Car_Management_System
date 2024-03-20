@@ -23,9 +23,6 @@ public class AddCar {
         this.maintenace_stat = maintenace_stat;
         this.price = price;
     }
-
-
-
     public static void main(String[] args) {
         ArrayList<AddCar> CarList = new ArrayList<AddCar>();
         AddCar car1 = new AddCar(1, "Toyota", "Camry",2020,25000,"Good", 25000);
