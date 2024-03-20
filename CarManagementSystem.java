@@ -21,7 +21,8 @@ public class CarManagementSystem {
             System.out.println("1. Search cars by make");
             System.out.println("2. Read cars from JSON file");
             System.out.println("3. Add a car to JSON file");
-            System.out.println("4. Exit");
+            System.out.println("4. delete a car from JSON file");
+            System.out.println("5. Exit");
             System.out.print("Enter your choice: ");
             choice = scanner.nextInt();
             scanner.nextLine(); // Consume newline
@@ -37,6 +38,9 @@ public class CarManagementSystem {
                     addCar();
                     break;
                 case 4:
+                    deleteCar();
+                    break;
+                case 5:
                     System.out.println("Exiting...");
                     break;
                 default:
@@ -69,5 +73,12 @@ public class CarManagementSystem {
 
     private void addCar() {
         AddCar.main(null);
+    }
+    private void deleteCar() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter ID of the car to delete: ");
+        int carId = scanner.nextInt();
+        scanner.close();
+        CarDeletion.deleteCar("Car_DataStorage.json", carId); 
     }
 }
