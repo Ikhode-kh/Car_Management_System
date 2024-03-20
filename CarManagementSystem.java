@@ -28,7 +28,7 @@ public class CarManagementSystem {
 
             switch (choice) {
                 case 1:
-                    searchByMake();
+                    SearchSystem();
                     break;
                 case 2:
                     readJsonFile();
@@ -47,26 +47,11 @@ public class CarManagementSystem {
         scanner.close();
     }
 
-    private void searchByMake() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter make to search: ");
-        String make = scanner.nextLine();
-
-        try {
-            JSONArray jsonArray = readJsonArrayFromFile("Car_DataSet.json");
-            JSONArray carsByMake = CarSearch.searchByMake(jsonArray, make);
-            if (carsByMake.size() > 0) {
-                System.out.println("Cars found:");
-                System.out.printf("%-5s %-10s %-10s\n", "ID", "Make", "Price");
-                for (Object obj : carsByMake) {
-                    JSONObject car = (JSONObject) obj;
-                    System.out.printf("%-5s %-10s %-10s\n", car.get("id"), car.get("make"), car.get("price"));
-                }
-            } else {
-                System.out.println("No cars found for the specified make.");
-            }
-        } catch (IOException | ParseException e) {
-            e.printStackTrace();
+    private void SearchSystem() {
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Enter make to search: ");
+            String make = scanner.nextLine();
+            CarSearch.SearchCar(make);
         }
     }
 
