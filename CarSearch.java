@@ -8,7 +8,7 @@ import org.json.simple.parser.ParseException;
 public class CarSearch {
     public static void main(String[] args) {
         try {
-            JSONArray jsonArray = readJsonArrayFromFile("Car_DataSet.json");
+            JSONArray jsonArray = readJsonArrayFromFile("Car_DataStorage.json");
             // System.out.println("JSON Array: " + jsonArray);
 
             // Example usage of search function
@@ -30,7 +30,7 @@ public class CarSearch {
 
     public static void SearchCar(String CompanyName) {
         try {
-            JSONArray jsonArray = readJsonArrayFromFile("Car_DataSet.json");
+            JSONArray jsonArray = readJsonArrayFromFile("Car_DataStorage.json");
             // System.out.println("JSON Array: " + jsonArray);
 
             // Example usage of search function
