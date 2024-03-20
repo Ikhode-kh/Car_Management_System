@@ -13,7 +13,6 @@ public class Car_read {
           "Price", "Maintenace_stat");
 
       JSONArray jsonArray = readJsonArrayFromFile("Car_DataSet.json");
-      // System.out.println("JSON Array: " + jsonArray);
 
       for (Object object : jsonArray) {
         JSONObject obj = (JSONObject) object;
