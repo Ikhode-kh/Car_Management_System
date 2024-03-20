@@ -41,7 +41,7 @@ public class CarSearch {
 
         for (Object obj : jsonArray) {
             JSONObject car = (JSONObject) obj;
-            String make = (String) car.get("make");
+            String make = (String) car.get("Make");
             if (make.equalsIgnoreCase(makeName)) {
                 result.add(car);
             }
