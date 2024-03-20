@@ -1,1 +1,94 @@
-{"Cars":[{"Year":2020,"Price":25000,"Maintenace_stat":"Good","Mileage":25000,"Model":"Camry","Make":"Toyota","Id":1},{"Year":2018,"Price":20000,"Maintenace_stat":"Fair","Mileage":30000,"Model":"Civic","Make":"Honda","Id":2},{"Year":2022,"Price":30000,"Maintenace_stat":"Excellent","Mileage":15000,"Model":"Escape","Make":"Ford","Id":3},{"Year":2023,"Price":54130,"Maintenace_stat":"Good","Mileage":330,"Model":"Y","Make":"Tesla","Id":4},{"Year":2024,"Price":93800,"Maintenace_stat":"Good","Mileage":56000,"Model":"Prius","Make":"Toyota","Id":5},{"Year":2024,"Price":45000,"Maintenace_stat":"Good","Mileage":500,"Model":"Seal U","Make":"Byd","Id":6},{"Year":2022,"Price":507353,"Maintenace_stat":"Excellent","Mileage":16000,"Model":"Aventador","Make":"Lamborghini","Id":7},{"Year":2024,"Price":40500,"Maintenace_stat":"Excellent","Mileage":20000,"Model":"X1 SUV","Make":"BMW","Id":8},{"Year":2023,"Price":60990,"Maintenace_stat":"Excellent","Mileage":550000,"Model":"Cyber Truck","Make":"Tesla","Id":9},{"Year":2022,"Price":88245,"Maintenace_stat":"Good","Mileage":10000,"Model":"LX 570","Make":"Lexus","Id":10}]}
+{
+  "Cars": [
+    {
+      "Year": 2020,
+      "Price": 25000,
+      "Maintenace_stat": "Good",
+      "Mileage": 25000,
+      "Model": "Camry",
+      "Make": "Toyota",
+      "Id": 1
+    },
+    {
+      "Year": 2018,
+      "Price": 20000,
+      "Maintenace_stat": "Fair",
+      "Mileage": 30000,
+      "Model": "Civic",
+      "Make": "Honda",
+      "Id": 2
+    },
+    {
+      "Year": 2022,
+      "Price": 30000,
+      "Maintenace_stat": "Excellent",
+      "Mileage": 15000,
+      "Model": "Escape",
+      "Make": "Ford",
+      "Id": 3
+    },
+    {
+      "Year": 2023,
+      "Price": 54130,
+      "Maintenace_stat": "Good",
+      "Mileage": 330,
+      "Model": "Y",
+      "Make": "Tesla",
+      "Id": 4
+    },
+    {
+      "Year": 2024,
+      "Price": 93800,
+      "Maintenace_stat": "Good",
+      "Mileage": 56000,
+      "Model": "Prius",
+      "Make": "Toyota",
+      "Id": 5
+    },
+    {
+      "Year": 2024,
+      "Price": 45000,
+      "Maintenace_stat": "Good",
+      "Mileage": 500,
+      "Model": "Seal U",
+      "Make": "Byd",
+      "Id": 6
+    },
+    {
+      "Year": 2022,
+      "Price": 507353,
+      "Maintenace_stat": "Excellent",
+      "Mileage": 16000,
+      "Model": "Aventador",
+      "Make": "Lamborghini",
+      "Id": 7
+    },
+    {
+      "Year": 2024,
+      "Price": 40500,
+      "Maintenace_stat": "Excellent",
+      "Mileage": 20000,
+      "Model": "X1 SUV",
+      "Make": "BMW",
+      "Id": 8
+    },
+    {
+      "Year": 2023,
+      "Price": 60990,
+      "Maintenace_stat": "Excellent",
+      "Mileage": 550000,
+      "Model": "Cyber Truck",
+      "Make": "Tesla",
+      "Id": 9
+    },
+    {
+      "Year": 2022,
+      "Price": 88245,
+      "Maintenace_stat": "Good",
+      "Mileage": 10000,
+      "Model": "LX 570",
+      "Make": "Lexus",
+      "Id": 10
+    }
+  ]
+}
