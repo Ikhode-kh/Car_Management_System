@@ -31,6 +31,7 @@ public class Car_read {
     }
   }
 
+  
   public static JSONArray readJsonArrayFromFile(String fileName) throws IOException, ParseException {
     JSONParser parser = new JSONParser();
     try (FileReader reader = new FileReader(fileName)) {
