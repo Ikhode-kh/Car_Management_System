@@ -1,15 +1,18 @@
-import java.io.FileReader;
-import java.io.IOException;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
 import java.util.Scanner;
 
-public class CarManagementSystem {
+class carManagementSystem {
 
     public static void main(String[] args) {
-        CarManagementSystem system = new CarManagementSystem();
+        carManagementSystem system = new carManagementSystem();
         system.run();
     }
 
@@ -68,6 +71,45 @@ public class CarManagementSystem {
     }
 
     private void addCar() {
-        AddCar.main(null);
+        // AddCar.main(null);
+
+        Scanner ent = new Scanner(System.in);
+
+        System.out.println("Enter Car ID: ");
+        int id = ent.nextInt();
+        ent.nextLine();
+        System.out.println("Enter Car Make: ");
+        String make = ent.nextLine();
+
+        System.out.println("Enter Car model: ");
+        String model = ent.nextLine();
+
+        System.out.println("Enter Car year: ");
+        int year = ent.nextInt();
+        System.out.println("Enter Car mileage: ");
+        int mileage = ent.nextInt();
+        ent.nextLine();
+        System.out.println("Enter Car Maintenace status: ");
+        String maintenace_stat = ent.nextLine();
+
+        System.out.println("Enter Car Price: ");
+        int price = ent.nextInt();
+
+        AddCar newCar = new AddCar(id, make, model, year, mileage, maintenace_stat, price);
+        JSONObject jsonObj = new JSONObject();
+        jsonObj.put("Price", newCar.price);
+        jsonObj.put("Maintenace_stat", newCar.maintenace_stat);
+        jsonObj.put("Mileage", newCar.mileage);
+        jsonObj.put("Year", newCar.year);
+        jsonObj.put("Model", newCar.model);
+        jsonObj.put("Make", newCar.make);
+        jsonObj.put("Id", newCar.id);
+        String filepath = "Car_DataStorage.json";
+        try (Writer writeData = new FileWriter(filepath, true)) {
+            writeData.write(jsonObj.toJSONString() + "\n"); // Append new car data to the file
+            System.out.println("Successfully added new car to JSON file.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -7,13 +7,13 @@ import java.io.Writer;
 import java.util.ArrayList;
 
 public class AddCar {
-    private int id;
-    private String make;
-    private String model;
-    private int year;
-    private int mileage;
-    private String maintenace_stat;
-    private int price;
+     int id;
+     String make;
+     String model;
+     int year;
+     int mileage;
+     String maintenace_stat;
+     int price;
 
     public AddCar(int id, String make, String model, int year, int mileage, String maintenace_stat, int price) {
         this.id = id;
