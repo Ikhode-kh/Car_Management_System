@@ -8,10 +8,23 @@ import org.json.simple.parser.ParseException;
 public class Car_read {
   public static void main(String[] args) {
     try {
+      System.out.println("Information:");
+      System.out.printf("%-5s %-15s %-15s %-15s %-15s %-10s\n", "ID", "Model", "Year", "Make",
+          "Price", "Maintenace_stat");
+
       JSONArray jsonArray = readJsonArrayFromFile("Car_DataSet.json");
+
       for (Object object : jsonArray) {
-        JSONObject obj=new JSONObject();
-        System.out.println(obj.get("id"));
+        JSONObject obj = (JSONObject) object;
+
+        
+        System.out.printf("%-5s %-15s %-15s %-15s %-15s %-10s \n", 
+        obj.get("Id"), 
+        obj.get("Model"), 
+        obj.get("Year"),
+        obj.get("Make"),
+        obj.get("Price"), 
+        obj.get("Maintenace_stat"));
       }
     } catch (IOException | ParseException e) {
       e.printStackTrace();
@@ -20,14 +33,9 @@ public class Car_read {
 
   public static JSONArray readJsonArrayFromFile(String fileName) throws IOException, ParseException {
     JSONParser parser = new JSONParser();
-    Object obj = parser.parse(new FileReader(fileName));
-    JSONObject jsonObj = (JSONObject) obj;
-
-    JSONArray jsonArray = new JSONArray();
-    for (Object key : jsonObj.keySet()) {
-      String diagramKey = (String) key;
-      jsonArray.add(jsonObj.get(diagramKey));
+    try (FileReader reader = new FileReader(fileName)) {
+      JSONObject root = (JSONObject) parser.parse(reader);
+      return (JSONArray) root.get("Cars"); // Directly access the "Cars" array
     }
-    return jsonArray;
   }
 }
