@@ -6,48 +6,45 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class CarSearch {
-    public static void main(String[] args) {
+
+    public static void SearchByManufacture(String manufacturer) {
         try {
             JSONArray jsonArray = readJsonArrayFromFile("Car_DataStorage.json");
             // System.out.println("JSON Array: " + jsonArray);
 
             // Example usage of search function
-            JSONArray carsByMake = searchByMake(jsonArray, "Toyota");
-            if (carsByMake.size() > 0) {
+            JSONArray carsByManufacturer = searchByManufacturer(jsonArray, manufacturer);
+            if (carsByManufacturer.size() > 0) {
                 System.out.println("Cars found:");
-                System.out.printf("%-5s %-10s %-10s\n", "ID", "Make", "Price");
-                for (Object obj : carsByMake) {
+                System.out.printf("%-5s %-12s %-10s %-10s %-10s %-10s %-10s\n", "ID", "Model Year", "Price", "Class",
+                        "Units", "Model", "Manufacturer");
+                for (Object obj : carsByManufacturer) {
                     JSONObject car = (JSONObject) obj;
-                    System.out.printf("%-5s %-10s %-10s\n", car.get("Id"), car.get("Make"), car.get("Price"));
+                    System.out.printf("%-5s %-12s %-10s %-10s %-10s %-10s %-10s\n", car.get("Id"),
+                            car.get("Model_Year"), car.get("Price"), car.get("Class"), car.get("Units"),
+                            car.get("Model"), car.get("Manufacturer"));
                 }
             } else {
-                System.out.println("No cars found for the specified make.");
+                System.out.println("No cars found for the specified manufacturer.");
             }
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
     }
 
-    public static void SearchCar(String CompanyName) {
-        try {
-            JSONArray jsonArray = readJsonArrayFromFile("Car_DataStorage.json");
-            // System.out.println("JSON Array: " + jsonArray);
+    @SuppressWarnings("unchecked")
+    public static JSONArray searchByManufacturer(JSONArray jsonArray, String manufacturerName) {
+        JSONArray result = new JSONArray();
 
-            // Example usage of search function
-            JSONArray carsByMake = searchByMake(jsonArray, CompanyName);
-            if (carsByMake.size() > 0) {
-                System.out.println("Cars found:");
-                System.out.printf("%-5s %-10s %-10s\n", "ID", "Make", "Price");
-                for (Object obj : carsByMake) {
-                    JSONObject car = (JSONObject) obj;
-                    System.out.printf("%-5s %-10s %-10s\n", car.get("Id"), car.get("Make"), car.get("Price"));
-                }
-            } else {
-                System.out.println("No cars found for the specified make.");
+        for (Object obj : jsonArray) {
+            JSONObject car = (JSONObject) obj;
+            String manufacturer = (String) car.get("Manufacturer");
+            if (manufacturer.equalsIgnoreCase(manufacturerName)) {
+                result.add(car);
             }
-        } catch (IOException | ParseException e) {
-            e.printStackTrace();
         }
+
+        return result;
     }
 
     public static JSONArray readJsonArrayFromFile(String fileName) throws IOException, ParseException {
@@ -56,20 +53,5 @@ public class CarSearch {
         JSONObject jsonObj = (JSONObject) obj;
 
         return (JSONArray) jsonObj.get("Cars");
-    }
-
-    @SuppressWarnings("unchecked")
-    public static JSONArray searchByMake(JSONArray jsonArray, String makeName) {
-        JSONArray result = new JSONArray();
-
-        for (Object obj : jsonArray) {
-            JSONObject car = (JSONObject) obj;
-            String make = (String) car.get("Make");
-            if (make.equalsIgnoreCase(makeName)) {
-                result.add(car);
-            }
-        }
-
-        return result;
     }
 }

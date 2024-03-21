@@ -24,7 +24,7 @@ class carManagementSystem {
             System.out.println("1. Search cars by make");
             System.out.println("2. Read cars from JSON file");
             System.out.println("3. Add a car to JSON file");
-            System.out.println("4. Delete a car from JSON file");
+            System.out.println("4. delete a car from JSON file");
             System.out.println("5. Exit");
             System.out.print("Enter your choice: ");
             choice = scanner.nextInt();
@@ -35,7 +35,7 @@ class carManagementSystem {
                     SearchSystem();
                     break;
                 case 2:
-                read();
+                    read();
                     break;
                 case 3:
                     addCar();
@@ -58,7 +58,7 @@ class carManagementSystem {
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.print("Enter make to search: ");
             String make = scanner.nextLine();
-            CarSearch.SearchCar(make);
+            CarSearch.SearchByManufacture(make);
         }
     }
 
@@ -69,10 +69,10 @@ class carManagementSystem {
 
         return (JSONArray) jsonObj.get("Cars");
     }
-    private void read(){
+
+    private void read() {
         Car_read.read();
     }
-    
 
     @SuppressWarnings("unchecked")
     private void addCar() {
