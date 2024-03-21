@@ -6,7 +6,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class Car_read {
-  public static void main(String[] args) {
+  public static void read(){
     try {
       System.out.println("Information:");
       System.out.printf("%-5s %-15s %-15s %-15s %-15s %-10s\n", "ID", "Model", "Year", "Make",
