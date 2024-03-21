@@ -8,7 +8,6 @@ class Car {
     private String make;
     private double price;
     private boolean maintenanceStatus;
-    
 
     public Car(String id, String model, int year, String make, double price, boolean maintenanceStatus) {
         this.id = id;
