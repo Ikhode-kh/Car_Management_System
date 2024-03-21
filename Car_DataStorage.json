@@ -1,5 +1,6 @@
 {
     "Cars": [
+<<<<<<< Updated upstream
       {
         "Id": 1,
         "Model_Year": 2020,
@@ -93,3 +94,25 @@
     ]
   }
   
+=======
+        {
+            "Maintenance Status": "good",
+            "Year": 2003,
+            "Price": 10000,
+            "Mileage": 20000,
+            "Model": "lx570",
+            "Make": "tesla",
+            "Id": 90
+        },
+        {
+            "Maintenance Status": "bad",
+            "Year": 2000,
+            "Price": 2500,
+            "Mileage": 1000,
+            "Model": "shark",
+            "Make": "camry",
+            "Id": 123
+        }
+    ]
+}
+>>>>>>> Stashed changes
