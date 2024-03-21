@@ -24,7 +24,7 @@ class carManagementSystem {
             System.out.println("1. Search cars by make");
             System.out.println("2. Read cars from JSON file");
             System.out.println("3. Add a car to JSON file");
-            System.out.println("4. delete a car from JSON file");
+            System.out.println("4. Delete a car from JSON file");
             System.out.println("5. Exit");
             System.out.print("Enter your choice: ");
             choice = scanner.nextInt();
