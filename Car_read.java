@@ -1,8 +1,8 @@
-import java.io.FileReader;
+
 import java.io.IOException;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
+
 import org.json.simple.parser.ParseException;
 
 public class Car_read {
@@ -12,7 +12,7 @@ public class Car_read {
       System.out.printf("%-5s %-15s %-15s %-15s %-15s %-15s %-10s\n", "ID", "Model", "Manufacturer", "Model_Year",
           "Price", "Class","Units");
 
-      JSONArray jsonArray = readJsonArrayFromFile("Car_DataStorage.json");
+      JSONArray jsonArray = Read_Json.readJsonArrayFromFile("Car_DataStorage.json");
 
       for (Object object : jsonArray) {
         JSONObject obj = (JSONObject) object;
@@ -29,15 +29,6 @@ public class Car_read {
       }
     } catch (IOException | ParseException e) {
       e.printStackTrace();
-    }
-  }
-
-  
-  public static JSONArray readJsonArrayFromFile(String fileName) throws IOException, ParseException {
-    JSONParser parser = new JSONParser();
-    try (FileReader reader = new FileReader(fileName)) {
-      JSONObject root = (JSONObject) parser.parse(reader);
-      return (JSONArray) root.get("Cars"); // Directly access the "Cars" array
     }
   }
 }

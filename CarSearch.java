@@ -1,15 +1,13 @@
-import java.io.FileReader;
 import java.io.IOException;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class CarSearch {
 
     public static void SearchByManufacture(String manufacturer) {
         try {
-            JSONArray jsonArray = readJsonArrayFromFile("Car_DataStorage.json");
+            JSONArray jsonArray = Read_Json.readJsonArrayFromFile("Car_DataStorage.json");
             // System.out.println("JSON Array: " + jsonArray);
 
             // Example usage of search function
@@ -47,11 +45,11 @@ public class CarSearch {
         return result;
     }
 
-    public static JSONArray readJsonArrayFromFile(String fileName) throws IOException, ParseException {
-        JSONParser parser = new JSONParser();
-        Object obj = parser.parse(new FileReader(fileName));
-        JSONObject jsonObj = (JSONObject) obj;
+    // public static JSONArray readJsonArrayFromFile(String fileName) throws IOException, ParseException {
+    //     JSONParser parser = new JSONParser();
+    //     Object obj = parser.parse(new FileReader(fileName));
+    //     JSONObject jsonObj = (JSONObject) obj;
 
-        return (JSONArray) jsonObj.get("Cars");
-    }
+    //     return (JSONArray) jsonObj.get("Cars");
+    // }
 }

@@ -25,8 +25,15 @@ class carManagementSystem {
             System.out.println("4. delete a car from JSON file");
             System.out.println("5. Exit");
             System.out.print("Enter your choice: ");
-            choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            
+            // Handle input mismatch exceptions
+            try {
+                choice = scanner.nextInt();
+            } catch (java.util.InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a number.");
+                scanner.next(); // Consume the invalid input
+                choice = 0; // Set choice to an invalid value to continue the loop
+            }
 
             switch (choice) {
                 case 1:
@@ -43,10 +50,9 @@ class carManagementSystem {
                     break;
                 case 5:
                     System.out.println("Exiting...");
-                    System.exit(0);
                     break;
                 default:
-                    System.out.println("Invalid choice. Please enter a number between 1 and 4.");
+                    System.out.println("Invalid choice. Please enter a number between 1 and 5.");
             }
         } while (choice != 5);
 
@@ -79,10 +85,17 @@ class carManagementSystem {
     }
 
     private void deleteCar() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter ID of the car to delete: ");
-        int carId = scanner.nextInt();
-        scanner.close();
-        CarDeletion.deleteCar("Car_DataStorage.json", carId);
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Enter ID of the car to delete: ");
+            
+            // Handle input mismatch exceptions
+            try {
+                int carId = scanner.nextInt();
+                CarDeletion.deleteCar("Car_DataStorage.json", carId);
+            } catch (java.util.InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a valid car ID.");
+                scanner.next(); // Consume the invalid input
+            }
+        }
     }
 }
