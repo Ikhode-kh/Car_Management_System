@@ -4,13 +4,10 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Writer;
 import java.util.Scanner;
 
 class carManagementSystem {
-    private static String filepath = "Car_DataStorage.json";
 
     public static void main(String[] args) {
         carManagementSystem system = new carManagementSystem();
@@ -51,7 +48,7 @@ class carManagementSystem {
                 default:
                     System.out.println("Invalid choice. Please enter a number between 1 and 4.");
             }
-        } while (choice != 4);
+        } while (choice != 5);
 
         scanner.close();
     }
@@ -76,7 +73,6 @@ class carManagementSystem {
         Car_read.read();
     }
 
-    @SuppressWarnings("unchecked")
     private void addCar() {
         AddCar CreateCar = new AddCar();
         CreateCar.addCar();
