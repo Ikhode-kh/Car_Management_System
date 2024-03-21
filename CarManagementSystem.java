@@ -35,7 +35,7 @@ class carManagementSystem {
                     SearchSystem();
                     break;
                 case 2:
-                    readJsonFile();
+                read();
                     break;
                 case 3:
                     addCar();
@@ -69,10 +69,10 @@ class carManagementSystem {
 
         return (JSONArray) jsonObj.get("Cars");
     }
-
-    private void readJsonFile() {
-        // Car_read.readJsonArrayFromFile("Car_DataStorage.json");
+    private void read(){
+        Car_read.read();
     }
+    
 
     @SuppressWarnings("unchecked")
     private void addCar() {
