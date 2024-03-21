@@ -9,15 +9,15 @@ import java.util.Scanner;
 
 public class AddCar {
     int id;
-    String make;
+    String Manufacture;
     String model;
     int year;
-    int mileage;
-    String maintenace_stat;
+    int units;
+    String Class;
     int price;
 
     public void addCar() {
-        ArrayList<AddCar> carList = new ArrayList<>();
+        // ArrayList<AddCar> carList = new ArrayList<>();
 
         Scanner ent = new Scanner(System.in);
         System.out.println("How many car you want to Input: ");
@@ -30,7 +30,7 @@ public class AddCar {
             ent.nextLine(); // Consume newline character
 
             System.out.print("Make: ");
-            make = ent.nextLine();
+            Manufacture = ent.nextLine();
 
             System.out.print("Model: ");
             model = ent.nextLine();
@@ -39,22 +39,22 @@ public class AddCar {
             year = ent.nextInt();
 
             System.out.print("Mileage: ");
-            mileage = ent.nextInt();
+            units = ent.nextInt();
             ent.nextLine(); // Consume newline character
 
             System.out.print("Maintenance Status: ");
-            maintenace_stat = ent.nextLine();
+            Class = ent.nextLine();
 
             System.out.print("Price: ");
             price = ent.nextInt();
 
             JSONObject carJson = new JSONObject();
             carJson.put("Id", id);
-            carJson.put("Make", make);
+            carJson.put("Make", Manufacture);
             carJson.put("Model", model);
             carJson.put("Year", year);
-            carJson.put("Mileage", mileage);
-            carJson.put("Maintenance Status", maintenace_stat);
+            carJson.put("Mileage", units);
+            carJson.put("Maintenance Status", Class);
             carJson.put("Price", price);
             jArr.add(carJson);
 
@@ -70,6 +70,8 @@ public class AddCar {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        ent.close();
     }
 
 }
