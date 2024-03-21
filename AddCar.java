@@ -4,7 +4,7 @@ import org.json.simple.JSONObject;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class AddCar {
@@ -17,8 +17,8 @@ public class AddCar {
     int price;
 
     public void addCar() {
-        // ArrayList<AddCar> carList = new ArrayList<>();
 
+        HashMap<String, Object> Carlist = new HashMap<String, Object>();
         Scanner ent = new Scanner(System.in);
         System.out.println("How many car you want to Input: ");
         int number = ent.nextInt();
@@ -29,7 +29,7 @@ public class AddCar {
             id = ent.nextInt();
             ent.nextLine(); // Consume newline character
 
-            System.out.print("Make: ");
+            System.out.print("Manufacturer: ");
             Manufacture = ent.nextLine();
 
             System.out.print("Model: ");
@@ -38,25 +38,25 @@ public class AddCar {
             System.out.print("Year: ");
             year = ent.nextInt();
 
-            System.out.print("Mileage: ");
+            System.out.print("Units: ");
             units = ent.nextInt();
             ent.nextLine(); // Consume newline character
 
-            System.out.print("Maintenance Status: ");
+            System.out.print("Class: ");
             Class = ent.nextLine();
 
             System.out.print("Price: ");
             price = ent.nextInt();
 
-            JSONObject carJson = new JSONObject();
-            carJson.put("Id", id);
-            carJson.put("Make", Manufacture);
-            carJson.put("Model", model);
-            carJson.put("Year", year);
-            carJson.put("Mileage", units);
-            carJson.put("Maintenance Status", Class);
-            carJson.put("Price", price);
-            jArr.add(carJson);
+            // JSONObject carJson = new JSONObject();
+            Carlist.put("Id", id);
+            Carlist.put("Manufacturere", Manufacture);
+            Carlist.put("Model", model);
+            Carlist.put("Year", year);
+            Carlist.put("Units", units);
+            Carlist.put("Class", Class);
+            Carlist.put("Price", price);
+            jArr.add(Carlist);
 
         }
         JSONObject mainObj = new JSONObject();
