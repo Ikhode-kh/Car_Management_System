@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-[{"Price":30000,"Model":"Escape","Manufacturer":"Ford","Class":"Excellent","Id":3,"Model_Year":2022,"Units":15000},{"Price":54130,"Model":"Y","Manufacturer":"Tesla","Class":"Good","Id":4,"Model_Year":2023,"Units":330},{"Price":93800,"Model":"Prius","Manufacturer":"Toyota","Class":"Good","Id":5,"Model_Year":2024,"Units":56000},{"Price":45000,"Model":"Seal U","Manufacturer":"Byd","Class":"Good","Id":6,"Model_Year":2024,"Units":500},{"Price":507353,"Model":"Aventador","Manufacturer":"Lamborghini","Class":"Excellent","Id":7,"Model_Year":2022,"Units":16000},{"Price":40500,"Model":"X1 SUV","Manufacturer":"BMW","Class":"Excellent","Id":8,"Model_Year":2024,"Units":20000},{"Price":60990,"Model":"Cyber Truck","Manufacturer":"Tesla","Class":"Excellent","Id":9,"Model_Year":2023,"Units":550000},{"Price":88245,"Model":"LX 570","Manufacturer":"Lexus","Class":"Good","Id":10,"Model_Year":2022,"Units":10000}]
-=======
 {
     "Cars": [
-<<<<<<< Updated upstream
       {
         "Id": 1,
         "Model_Year": 2020,
@@ -96,27 +92,3 @@
       }
     ]
   }
-  
-=======
-        {
-            "Maintenance Status": "good",
-            "Year": 2003,
-            "Price": 10000,
-            "Mileage": 20000,
-            "Model": "lx570",
-            "Make": "tesla",
-            "Id": 90
-        },
-        {
-            "Maintenance Status": "bad",
-            "Year": 2000,
-            "Price": 2500,
-            "Mileage": 1000,
-            "Model": "shark",
-            "Make": "camry",
-            "Id": 123
-        }
-    ]
-}
->>>>>>> Stashed changes
->>>>>>> 01bb94bc5a4d5f1e9e71d696fff6cc3061c3b88b
