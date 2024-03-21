@@ -1,8 +1,7 @@
-
 import java.util.Scanner;
 import java.util.ArrayList;
 
-class updateCar {
+class Car {
     private String id;
     private String model;
     private int year;
@@ -63,15 +62,15 @@ class updateCar {
         this.maintenanceStatus = maintenanceStatus;
     }
 }
-
-class CarManagementSystem {
+//CarManagmentstem
+class CarMSystem {
     private ArrayList<Car> cars;
 
-    public CarManagementSystem() {
+    public CarMSystem() {
         this.cars = new ArrayList<>();
     }
 
-    public void updateCar(String id, String newModel, int newYear, String newMake, double newPrice, boolean newMaintenanceStatus) {
+    public void updatingCar(String id, String newModel, int newYear, String newMake, double newPrice, boolean newMaintenanceStatus) {
         for (Car car : cars) {
             if (car.getId().equals(id)) {
                 car.setModel(newModel);
@@ -90,8 +89,7 @@ class CarManagementSystem {
 public class UpdateCar {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        CarManagementSystem cms = new CarManagementSystem();
-
+        CarMSystem cms = new CarMSystem();
         System.out.print("Enter car ID to update: ");
         String updateId = scanner.nextLine();
         System.out.print("Enter new model: ");
@@ -107,6 +105,6 @@ public class UpdateCar {
         System.out.print("Enter new maintenance status (true/false): ");
         boolean newMaintenanceStatus = scanner.nextBoolean();
         scanner.nextLine(); // consume newline
-        cms.updateCar(updateId, newModel, newYear, newMake, newPrice, newMaintenanceStatus);
+        cms.updatingCar(updateId, newModel, newYear, newMake, newPrice, newMaintenanceStatus);
     }
 }
