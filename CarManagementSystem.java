@@ -25,7 +25,7 @@ class carManagementSystem {
             System.out.println("4. delete a car from JSON file");
             System.out.println("5. Exit");
             System.out.print("Enter your choice: ");
-            
+
             // Handle input mismatch exceptions
             try {
                 choice = scanner.nextInt();
@@ -80,14 +80,19 @@ class carManagementSystem {
     }
 
     private void addCar() {
-        AddCar CreateCar = new AddCar();
-        CreateCar.addCar();
+        String _filepath = "Car_DataStorage.json";
+        AddCar createCar = new AddCar(0, _filepath, _filepath, 0, 0, _filepath, 0);
+        try {
+            createCar.CreateNewCar();
+        } catch (ParseException e) {
+            System.out.println(e.getMessage().toString());
+        }
     }
 
     private void deleteCar() {
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.print("Enter ID of the car to delete: ");
-            
+
             // Handle input mismatch exceptions
             try {
                 int carId = scanner.nextInt();
