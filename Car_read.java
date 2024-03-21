@@ -9,8 +9,8 @@ public class Car_read {
   public static void read(){
     try {
       System.out.println("Information:");
-      System.out.printf("%-5s %-15s %-15s %-15s %-15s %-10s\n", "ID", "Model", "Year", "Make",
-          "Price", "Maintenace_stat");
+      System.out.printf("%-5s %-15s %-15s %-15s %-15s %-15s %-10s\n", "ID", "Model", "Manufacturer", "Model_Year",
+          "Price", "Class","Units");
 
       JSONArray jsonArray = readJsonArrayFromFile("Car_DataStorage.json");
 
@@ -18,13 +18,14 @@ public class Car_read {
         JSONObject obj = (JSONObject) object;
 
         
-        System.out.printf("%-5s %-15s %-15s %-15s %-15s %-10s \n", 
+        System.out.printf("%-5s %-15s %-15s %-15s %-15s %-15s %-10s \n", 
         obj.get("Id"), 
         obj.get("Model"), 
-        obj.get("Year"),
-        obj.get("Make"),
-        obj.get("Price"), 
-        obj.get("Maintenace_stat"));
+        obj.get("Manufacturer"),
+        obj.get("Model_Year"),
+        obj.get("Price"),
+        obj.get("Class"),
+        obj.get("Units"));
       }
     } catch (IOException | ParseException e) {
       e.printStackTrace();

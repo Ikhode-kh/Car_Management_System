@@ -46,6 +46,7 @@ class carManagementSystem {
                     break;
                 case 5:
                     System.out.println("Exiting...");
+                    System.exit(0);
                     break;
                 default:
                     System.out.println("Invalid choice. Please enter a number between 1 and 4.");
