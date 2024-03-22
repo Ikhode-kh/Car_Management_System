@@ -29,7 +29,7 @@ public class CarUpdate {
             System.out.println("Available Car IDs:");
             for (Object carObject : carsArray) {
                 JSONObject car = (JSONObject) carObject;
-                System.out.println("ID: " + car.get("Id"));
+                System.out.println("ID: " + car.get("ID"));
             }
 
             // Prompt user to choose a car ID to modify
@@ -41,7 +41,7 @@ public class CarUpdate {
             JSONObject carToModify = null;
             for (Object carObject : carsArray) {
                 JSONObject car = (JSONObject) carObject;
-                if ((long) car.get("Id") == carId) {
+                if ((long) car.get("ID") == carId) {
                     carToModify = car;
                     break;
                 }
@@ -54,7 +54,7 @@ public class CarUpdate {
                 String fieldToModify = scanner.next();
                 System.out.println("Enter the new value for the field: ");
                 Object newValue;
-                if (fieldToModify.equals("Id")) {
+                if (fieldToModify.equals("ID")) {
                     newValue = scanner.nextInt();
                 } else if (fieldToModify.equals("Model_Year") || fieldToModify.equals("Units")) {
                     newValue = scanner.nextInt();
