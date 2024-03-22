@@ -60,7 +60,7 @@ class carManagementSystem {
             }
         } while (choice != 6);
 
-        // scanner.close();
+        scanner.close();
     }
 
     private void SearchSystem() {
