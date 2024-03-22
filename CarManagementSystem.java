@@ -1,10 +1,4 @@
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.Scanner;
 
 class carManagementSystem {
@@ -65,14 +59,6 @@ class carManagementSystem {
             String make = scanner.nextLine();
             CarSearch.SearchByManufacture(make);
         }
-    }
-
-    public static JSONArray readJsonArrayFromFile(String fileName) throws IOException, ParseException {
-        JSONParser parser = new JSONParser();
-        Object obj = parser.parse(new FileReader(fileName));
-        JSONObject jsonObj = (JSONObject) obj;
-
-        return (JSONArray) jsonObj.get("Cars");
     }
 
     private void read() {
