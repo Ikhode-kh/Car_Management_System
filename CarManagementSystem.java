@@ -1,13 +1,20 @@
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 
 class carManagementSystem {
 
-    void main(String[] args) {
+    public static void main(String[] args) {
         carManagementSystem system = new carManagementSystem();
         system.run();
     }
 
+    
     public void run() {
         Scanner scanner = new Scanner(System.in);
         int choice;
@@ -16,17 +23,19 @@ class carManagementSystem {
             System.out.println("1. Search cars by Manufacturer");
             System.out.println("2. Read cars from JSON file");
             System.out.println("3. Add a car to JSON file");
-            System.out.println("4. Delete a car from JSON file");
-            System.out.println("5. Exit");
+            System.out.println("4. delete a car from JSON file");
+            System.out.println("5. Update a car from JSON file");
+            System.out.println("6. Exit");
             System.out.print("Enter your choice: ");
 
             // Handle input mismatch exceptions
-            while (!scanner.hasNextInt()) {
+            try {
+                choice = scanner.nextInt();
+            } catch (java.util.InputMismatchException e) {
                 System.out.println("Invalid input. Please enter a number.");
                 scanner.next(); // Consume the invalid input
-                System.out.print("Enter your choice: ");
+                choice = 0; // Set choice to an invalid value to continue the loop
             }
-            choice = scanner.nextInt();
 
             switch (choice) {
                 case 1:
@@ -42,23 +51,32 @@ class carManagementSystem {
                     deleteCar();
                     break;
                 case 5:
+                    UpdateCar();
+                case 6:
                     System.out.println("Exiting...");
                     break;
                 default:
-                    System.out.println("Invalid choice. Please enter a number between 1 and 5.");
+                    System.out.println("Invalid choice. Please enter a number between 1 and 6.");
             }
-        } while (choice != 5);
+        } while (choice != 6);
 
         scanner.close();
     }
 
     private void SearchSystem() {
         try (Scanner scanner = new Scanner(System.in)) {
-            System.out.print("Enter Manufacturer to search: ");
+            System.out.print("Enter make to search: ");
             String make = scanner.nextLine();
             CarSearch.SearchByManufacture(make);
-            scanner.close();
         }
+    }
+
+    public static JSONArray readJsonArrayFromFile(String fileName) throws IOException, ParseException {
+        JSONParser parser = new JSONParser();
+        Object obj = parser.parse(new FileReader(fileName));
+        JSONObject jsonObj = (JSONObject) obj;
+
+        return (JSONArray) jsonObj.get("Cars");
     }
 
     private void read() {
@@ -76,10 +94,20 @@ class carManagementSystem {
     }
 
     private void deleteCar() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter ID of the car to delete: ");
-        int carId = scanner.nextInt();
-        CarDeletion.deleteCar("Car_DataStorage.json", carId); 
-        scanner.close();
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Enter ID of the car to delete: ");
+
+            // Handle input mismatch exceptions
+            try {
+                int carId = scanner.nextInt();
+                CarDeletion.deleteCar("Car_DataStorage.json", carId);
+            } catch (java.util.InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a valid car ID.");
+                scanner.next(); // Consume the invalid input
+            }
+        }
+    }
+    private void UpdateCar(){
+        CarUpdate.modifyCar("Car_DataStorage.json");
     }
 }
