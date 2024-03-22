@@ -17,10 +17,10 @@ public class Car_read {
 
         
         System.out.printf("%-5s %-15s %-15s %-15s %-15s %-15s %-10s \n", 
-        obj.get("Id"), 
+        obj.get("ID"), 
         obj.get("Model"), 
-        obj.get("Manufacturer"),
-        obj.get("Model_Year"),
+        obj.get("Manufacture"),
+        obj.get("Year"),
         obj.get("Price"),
         obj.get("Class"),
         obj.get("Units"));
