@@ -14,7 +14,6 @@ class carManagementSystem {
         system.run();
     }
 
-    
     public void run() {
         Scanner scanner = new Scanner(System.in);
         int choice;
@@ -61,7 +60,7 @@ class carManagementSystem {
             }
         } while (choice != 6);
 
-        scanner.close();
+        // scanner.close();
     }
 
     private void SearchSystem() {
@@ -87,11 +86,8 @@ class carManagementSystem {
     private void addCar() {
         String _filepath = "Car_DataStorage.json";
         AddCar createCar = new AddCar(0, _filepath, _filepath, 0, 0, _filepath, 0);
-        try {
-            createCar.CreateNewCar();
-        } catch (ParseException e) {
-            System.out.println(e.getMessage().toString());
-        }
+        // createCar.addCar();
+        createCar.CreateNewCar();
     }
 
     private void deleteCar() {
@@ -108,7 +104,8 @@ class carManagementSystem {
             }
         }
     }
-    private void UpdateCar(){
+
+    private void UpdateCar() {
         CarUpdate.modifyCar("Car_DataStorage.json");
     }
 }

@@ -11,13 +11,13 @@ import java.util.Scanner;
 
 public class AddCar {
     public static final String _filepath = "Car_DataStorage.json";
-    int id;
-    String Manufacture;
-    String model;
-    int year;
-    int units;
-    String Class;
-    int price;
+    private int id;
+    private String Manufacture;
+    private String model;
+    private int year;
+    private int units;
+    private String Class;
+    private int price;
 
     public AddCar(int id, String manufacture, String model, int year, int units, String aClass, int price) {
         this.id = id;
@@ -29,6 +29,7 @@ public class AddCar {
         this.price = price;
     }
 
+    @SuppressWarnings("unchecked")
     public void addCar() {
         ArrayList<AddCar> CarList = new ArrayList<AddCar>();
         AddCar car1 = new AddCar(1, "Toyota", "Camry", 2020, 25000, "Good", 25000);
@@ -77,7 +78,8 @@ public class AddCar {
 
     }
 
-    public void CreateNewCar() throws ParseException {
+    @SuppressWarnings("unchecked")
+    public void CreateNewCar() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter Car ID:");
@@ -135,11 +137,10 @@ public class AddCar {
             fileWriter.close();
 
             System.out.println("Successfully added new car to JSON file.");
-        } catch (IOException e) {
+        } catch (IOException | ParseException e) {
             System.out.println(e.getMessage().toString());
         }
         scanner.close();
     }
 
-  
 }
