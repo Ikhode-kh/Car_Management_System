@@ -19,7 +19,7 @@ class carManagementSystem {
         int choice;
         do {
             System.out.println("Car Management System");
-            System.out.println("1. Search cars by make");
+            System.out.println("1. Search cars by Manufacturer");
             System.out.println("2. Read cars from JSON file");
             System.out.println("3. Add a car to JSON file");
             System.out.println("4. delete a car from JSON file");
@@ -61,7 +61,7 @@ class carManagementSystem {
 
     private void SearchSystem() {
         try (Scanner scanner = new Scanner(System.in)) {
-            System.out.print("Enter make to search: ");
+            System.out.print("Enter Manufacturer to search: ");
             String make = scanner.nextLine();
             CarSearch.SearchByManufacture(make);
         }
