@@ -16,7 +16,7 @@ class carManagementSystem {
             System.out.println("1. Search cars by Manufacturer");
             System.out.println("2. Read cars from JSON file");
             System.out.println("3. Add a car to JSON file");
-            System.out.println("4. delete a car from JSON file");
+            System.out.println("4. Delete a car from JSON file");
             System.out.println("5. Exit");
             System.out.print("Enter your choice: ");
 
@@ -79,7 +79,7 @@ class carManagementSystem {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter ID of the car to delete: ");
         int carId = scanner.nextInt();
-        CarDeletion.deleteCar("Car_DataStorage.json", carId); // Replace with your actual file path
+        CarDeletion.deleteCar("Car_DataStorage.json", carId); 
         scanner.close();
     }
 }
