@@ -52,6 +52,7 @@ class carManagementSystem {
                     break;
                 case 5:
                     UpdateCar();
+                    break;
                 case 6:
                     System.out.println("Exiting...");
                     break;
