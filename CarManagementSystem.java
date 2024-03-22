@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 class carManagementSystem {
 
-    public static void main(String[] args) {
+    void main(String[] args) {
         carManagementSystem system = new carManagementSystem();
         system.run();
     }
@@ -21,13 +21,12 @@ class carManagementSystem {
             System.out.print("Enter your choice: ");
 
             // Handle input mismatch exceptions
-            try {
-                choice = scanner.nextInt();
-            } catch (java.util.InputMismatchException e) {
+            while (!scanner.hasNextInt()) {
                 System.out.println("Invalid input. Please enter a number.");
                 scanner.next(); // Consume the invalid input
-                choice = 0; // Set choice to an invalid value to continue the loop
+                System.out.print("Enter your choice: ");
             }
+            choice = scanner.nextInt();
 
             switch (choice) {
                 case 1:
@@ -58,6 +57,7 @@ class carManagementSystem {
             System.out.print("Enter Manufacturer to search: ");
             String make = scanner.nextLine();
             CarSearch.SearchByManufacture(make);
+            scanner.close();
         }
     }
 

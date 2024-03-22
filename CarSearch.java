@@ -18,7 +18,7 @@ public class CarSearch {
                         "Units", "Model", "Manufacture");
                 for (Object obj : carsByManufacture) {
                     JSONObject car = (JSONObject) obj;
-                    System.out.printf("%-5s %-10s %-10s %-10s %-10s %-10s\n", car.get("Id"), car.get("Price"),
+                    System.out.printf("%-5s %-10s %-10s %-10s %-10s %-10s\n", car.get("ID"), car.get("Price"),
                             car.get("Class"), car.get("Units"),
                             car.get("Model"), car.get("Manufacture"));
                 }
@@ -45,12 +45,4 @@ public class CarSearch {
         return result;
     }
 
-    // public static JSONArray readJsonArrayFromFile(String fileName) throws
-    // IOException, ParseException {
-    // JSONParser parser = new JSONParser();
-    // Object obj = parser.parse(new FileReader(fileName));
-    // JSONObject jsonObj = (JSONObject) obj;
-
-    // return (JSONArray) jsonObj.get("Cars");
-    // }
 }
