@@ -1,13 +1,13 @@
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class CarDeletion {
+
     public static void deleteCar(String filePath, int carId) {
         try {
             // Read the JSON file
@@ -28,7 +28,7 @@ public class CarDeletion {
             JSONObject carToDelete = null;
             for (Object carObject : carsArray) {
                 JSONObject car = (JSONObject) carObject;
-                if ((long) car.get("Id") == carId) {
+                if ((long) car.get("ID") == carId) {
                     carToDelete = car;
                     break;
                 }

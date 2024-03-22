@@ -90,17 +90,10 @@ class carManagementSystem {
     }
 
     private void deleteCar() {
-        try (Scanner scanner = new Scanner(System.in)) {
-            System.out.print("Enter ID of the car to delete: ");
-
-            // Handle input mismatch exceptions
-            try {
-                int carId = scanner.nextInt();
-                CarDeletion.deleteCar("Car_DataStorage.json", carId);
-            } catch (java.util.InputMismatchException e) {
-                System.out.println("Invalid input. Please enter a valid car ID.");
-                scanner.next(); // Consume the invalid input
-            }
-        }
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter ID of the car to delete: ");
+        int carId = scanner.nextInt();
+        CarDeletion.deleteCar("Car_DataStorage.json", carId); // Replace with your actual file path
+        scanner.close();
     }
 }
