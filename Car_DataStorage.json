@@ -1,121 +1,121 @@
 {
-    "Cars": [
-        {
-            "Year": 2020,
-            "Price": 25000,
-            "Model": "Camry",
-            "Class": "Good",
-            "ID": 1,
-            "Manufacture": "Toyota",
-            "Units": 25000
-        },
-        {
-            "Year": 2018,
-            "Price": 20000,
-            "Model": "Civic",
-            "Class": "Fair",
-            "ID": 2,
-            "Manufacture": "Honda",
-            "Units": 30000
-        },
-        {
-            "Year": 2022,
-            "Price": 30000,
-            "Model": "Escape",
-            "Class": "Excellent",
-            "ID": 3,
-            "Manufacture": "Ford",
-            "Units": 15000
-        },
-        {
-            "Year": 2023,
-            "Price": 54130,
-            "Model": "Y",
-            "Class": "Good",
-            "ID": 4,
-            "Manufacture": "Tesla",
-            "Units": 330
-        },
-        {
-            "Year": 2024,
-            "Price": 93800,
-            "Model": "Prius",
-            "Class": "Good",
-            "ID": 5,
-            "Manufacture": "Toyota",
-            "Units": 56000
-        },
-        {
-            "Year": 2024,
-            "Price": 45000,
-            "Model": "Seal U",
-            "Class": "Good",
-            "ID": 6,
-            "Manufacture": "Byd",
-            "Units": 500
-        },
-        {
-            "Year": 2022,
-            "Price": 507353,
-            "Model": "Aventador",
-            "Class": "Excellent",
-            "ID": 7,
-            "Manufacture": "Lamborghini",
-            "Units": 16000
-        },
-        {
-            "Year": 2024,
-            "Price": 40500,
-            "Model": "X1 SUV",
-            "Class": "Excellent",
-            "ID": 8,
-            "Manufacture": "BMW",
-            "Units": 20000
-        },
-        {
-            "Year": 2023,
-            "Price": 60990,
-            "Model": "Cyber Truck",
-            "Class": "Excellent",
-            "ID": 9,
-            "Manufacture": "Tesla",
-            "Units": 550000
-        },
-        {
-            "Year": 2022,
-            "Price": 88245,
-            "Model": "LX 570",
-            "Class": "Good",
-            "ID": 10,
-            "Manufacture": "Lexus",
-            "Units": 10000
-        },
-        {
-            "Year": 2077,
-            "Price": 25000,
-            "Model": "Atomax",
-            "Class": "good",
-            "ID": 124,
-            "Manufacture": "hyundai",
-            "Units": 100
-        },
-        {
-            "Year": 2004,
-            "Price": 10000,
-            "Model": "Rx300",
-            "Class": "Top grade",
-            "ID": 168,
-            "Manufacture": "Lexus",
-            "Units": 1000
-        },
-        {
-            "Year": 2025,
-            "Price": 1200,
-            "Model": "Ambulance",
-            "Class": "good",
-            "ID": 12,
-            "Manufacture": "Volkwagen",
-            "Units": 1000
-        }
-    ]
+  "Cars": [
+    {
+      "Year": 2020,
+      "Price": 25000,
+      "Model": "Camry",
+      "Class": "Good",
+      "ID": 1,
+      "Manufacture": "Toyota",
+      "Units": 25000
+    },
+    {
+      "Year": 2018,
+      "Price": 20000,
+      "Model": "Civic",
+      "Class": "Fair",
+      "ID": 2,
+      "Manufacture": "Honda",
+      "Units": 30000
+    },
+    {
+      "Year": 2022,
+      "Price": 30000,
+      "Model": "Escape",
+      "Class": "Excellent",
+      "ID": 3,
+      "Manufacture": "Ford",
+      "Units": 15000
+    },
+    {
+      "Year": 2023,
+      "Price": 54130,
+      "Model": "Y",
+      "Class": "Good",
+      "ID": 4,
+      "Manufacture": "Tesla",
+      "Units": 330
+    },
+    {
+      "Year": 2024,
+      "Price": 93800,
+      "Model": "Prius",
+      "Class": "Good",
+      "ID": 5,
+      "Manufacture": "Toyota",
+      "Units": 56000
+    },
+    {
+      "Year": 2024,
+      "Price": 45000,
+      "Model": "Seal U",
+      "Class": "Good",
+      "ID": 6,
+      "Manufacture": "Byd",
+      "Units": 500
+    },
+    {
+      "Year": 2022,
+      "Price": 507353,
+      "Model": "Aventador",
+      "Class": "Excellent",
+      "ID": 7,
+      "Manufacture": "Lamborghini",
+      "Units": 16000
+    },
+    {
+      "Year": 2024,
+      "Price": 40500,
+      "Model": "X1 SUV",
+      "Class": "Excellent",
+      "ID": 8,
+      "Manufacture": "BMW",
+      "Units": 20000
+    },
+    {
+      "Year": 2023,
+      "Price": 60990,
+      "Model": "Cyber Truck",
+      "Class": "Excellent",
+      "ID": 9,
+      "Manufacture": "Tesla",
+      "Units": 550000
+    },
+    {
+      "Year": 2022,
+      "Price": 88245,
+      "Model": "LX 570",
+      "Class": "Good",
+      "ID": 10,
+      "Manufacture": "Lexus",
+      "Units": 10000
+    },
+    {
+      "Year": 2077,
+      "Price": 25000,
+      "Model": "Atomax",
+      "Class": "good",
+      "ID": 124,
+      "Manufacture": "hyundai",
+      "Units": 100
+    },
+    {
+      "Year": 2004,
+      "Price": 10000,
+      "Model": "Rx300",
+      "Class": "Top grade",
+      "ID": 168,
+      "Manufacture": "Lexus",
+      "Units": 1000
+    },
+    {
+      "Year": 2025,
+      "Price": 1200,
+      "Model": "Ambulance",
+      "Class": "good",
+      "ID": 12,
+      "Manufacture": "Volkwagen",
+      "Units": 1000
+    }
+  ]
 }
