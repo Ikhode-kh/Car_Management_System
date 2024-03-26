@@ -7,15 +7,13 @@ import org.json.simple.parser.ParseException;
 
 public class CarSearch {
 
-    public static void SearchByManufacture() {
+    public static void SearchByManufacture(Scanner scanner) {
         String Manufacture;
-        try (Scanner scanner = new Scanner(System.in)) {
-            System.out.print("Enter make to search: ");
-            Manufacture = scanner.nextLine();
-        }
+        System.out.print("Enter make to search: ");
+        Manufacture = scanner.nextLine();
+
         try {
             JSONArray jsonArray = Read_Json.readJsonArrayFromFile("Car_DataStorage.json");
-            // System.out.println("JSON Array: " + jsonArray);
 
             // Example usage of search function
             JSONArray carsByManufacture = searchByManufacture(jsonArray, Manufacture);
