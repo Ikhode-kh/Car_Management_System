@@ -1,11 +1,18 @@
 import java.io.IOException;
+import java.util.Scanner;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.ParseException;
 
 public class CarSearch {
 
-    public static void SearchByManufacture(String Manufacture) {
+    public static void SearchByManufacture() {
+        String Manufacture;
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Enter make to search: ");
+            Manufacture = scanner.nextLine();
+        }
         try {
             JSONArray jsonArray = Read_Json.readJsonArrayFromFile("Car_DataStorage.json");
             // System.out.println("JSON Array: " + jsonArray);

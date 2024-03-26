@@ -64,11 +64,7 @@ class carManagementSystem {
     }
 
     private void SearchSystem() {
-        try (Scanner scanner = new Scanner(System.in)) {
-            System.out.print("Enter make to search: ");
-            String make = scanner.nextLine();
-            CarSearch.SearchByManufacture(make);
-        }
+        CarSearch.SearchByManufacture();
     }
 
     public static JSONArray readJsonArrayFromFile(String fileName) throws IOException, ParseException {
