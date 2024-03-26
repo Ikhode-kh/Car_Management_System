@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AddCar {
-    public static final String _filepath = "Car_DataStorage.json";
+    static final String _filepath = "Car_DataStorage.json";
     private int id;
     private String Manufacture;
     private String model;
@@ -31,7 +31,9 @@ public class AddCar {
 
     @SuppressWarnings("unchecked")
     public void addCar() {
+        // create a list to hold our car object
         ArrayList<AddCar> CarList = new ArrayList<AddCar>();
+        // Create AddCar objects with car details
         AddCar car1 = new AddCar(1, "Toyota", "Camry", 2020, 25000, "Good", 25000);
         AddCar car2 = new AddCar(2, "Honda", "Civic", 2018, 30000, "Fair", 20000);
         AddCar car3 = new AddCar(3, "Ford", "Escape", 2022, 15000, "Excellent", 30000);
@@ -42,6 +44,8 @@ public class AddCar {
         AddCar car8 = new AddCar(8, "BMW", "X1 SUV", 2024, 20000, "Excellent", 40500);
         AddCar car9 = new AddCar(9, "Tesla", "Cyber Truck", 2023, 550000, "Excellent", 60990);
         AddCar car10 = new AddCar(10, "Lexus", "LX 570", 2022, 10000, "Good", 88245);
+
+        // Add car objects to the list
         CarList.add(car1);
         CarList.add(car2);
         CarList.add(car3);
@@ -52,7 +56,7 @@ public class AddCar {
         CarList.add(car8);
         CarList.add(car9);
         CarList.add(car10);
-
+        // Create a JSON array to each car obj
         JSONArray jsonArray = new JSONArray();
         for (AddCar car : CarList) {
             JSONObject jsonObject = new JSONObject();
@@ -66,9 +70,11 @@ public class AddCar {
             jsonArray.add(jsonObject);
         }
 
+        // create json object to store jsonArray
         JSONObject carsObject = new JSONObject();
         carsObject.put("Cars", jsonArray);
 
+        // write json object to a json file
         try (FileWriter file = new FileWriter(_filepath)) {
             file.write(carsObject.toJSONString());
             System.out.println("Successfully wrote JSON object to file.");
@@ -81,7 +87,7 @@ public class AddCar {
     @SuppressWarnings("unchecked")
     public void CreateNewCar() {
         Scanner scanner = new Scanner(System.in);
-
+        // this lets user input
         System.out.println("Enter Car ID:");
         int id = scanner.nextInt();
         scanner.nextLine();
