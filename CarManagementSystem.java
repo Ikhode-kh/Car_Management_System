@@ -52,7 +52,7 @@ class carManagementSystem {
                     deleteCar(scanner);
                     break;
                 case 5:
-                    UpdateCar();
+                    UpdateCar(scanner);
                     break;
                 case 6:
                     System.out.println("Exiting...");
@@ -102,7 +102,8 @@ class carManagementSystem {
         }
     }
 
-    private void UpdateCar() {
-        CarUpdate.modifyCar("Car_DataStorage.json");
+    private void UpdateCar(Scanner scanner) {
+        CarUpdate.modifyCar("Car_DataStorage.json", scanner);
+        scanner.nextLine(); // Clear the scanner buffer
     }
 }
