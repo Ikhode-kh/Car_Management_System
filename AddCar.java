@@ -116,11 +116,25 @@ public class AddCar {
 
         try {
             // Read existing JSON data
-            FileReader reader = new FileReader(_filepath);
             JSONParser jsonParser = new JSONParser();
-            JSONObject carsObject = (JSONObject) jsonParser.parse(reader);
-            JSONArray carArray = (JSONArray) carsObject.get("Cars");
+            JSONArray carsArray;
 
+            try (FileReader reader = new FileReader(_filepath)) {
+                // Parse the JSON file
+                Object obj = jsonParser.parse(reader);
+
+                if (obj instanceof JSONArray) {
+                    // If the root object is a JSONArray
+                    carsArray = (JSONArray) obj;
+                } else {
+                    // If the root object is a JSONObject
+                    JSONObject jsonObject = (JSONObject) obj;
+                    carsArray = (JSONArray) jsonObject.get("Cars");
+                }
+            } catch (IOException | ParseException e) {
+                // If the file doesn't exist or is empty, create a new JSON array
+                carsArray = new JSONArray();
+            }
             // Create JSON object for new car
             JSONObject newCarObject = new JSONObject();
             newCarObject.put("ID", newCar.id);
@@ -132,21 +146,23 @@ public class AddCar {
             newCarObject.put("Price", newCar.price);
 
             // Add new car to the existing JSON array
-            carArray.add(newCarObject);
-
-            // Update the JSON object with the new car array
-            carsObject.put("Cars", carArray);
+            carsArray.add(newCarObject);
+            JSONObject updatedJsonObject = new JSONObject();
+            updatedJsonObject.put("Cars", carsArray);
+            // // Update the JSON object with the new car array
+            // carsObject.put("Cars", carArray);
 
             // Write updated JSON object back to file
-            FileWriter fileWriter = new FileWriter(_filepath);
-            fileWriter.write(carsObject.toJSONString());
-            fileWriter.close();
-
-            System.out.println("Successfully added new car to JSON file.");
-        } catch (IOException | ParseException e) {
+            try (FileWriter fileWriter = new FileWriter(_filepath)) {
+                fileWriter.write(updatedJsonObject.toJSONString());
+                System.out.println("Successfully added a new car to the JSON file.");
+                fileWriter.close();
+            } catch (IOException e) {
+                System.out.println(e.getMessage());
+            }
+        } catch (Exception e) {
             System.out.println(e.getMessage().toString());
         }
-        scanner.close();
     }
 
 }
